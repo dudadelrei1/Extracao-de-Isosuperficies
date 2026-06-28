@@ -20,4 +20,4 @@ Reconstruir superfícies tridimensionais a partir de conjuntos de dados volumét
 Avaliar o comportamento dos métodos de extração sob diferentes condições dos dados.
 Gerar modelos 3D precisos e visualmente interpretáveis.
 Explorar aplicações da visualização volumétrica em contextos médicos e científicos.
-* Explore applications of volumetric visualization in medical and scientific contexts.
+
