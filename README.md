@@ -8,24 +8,15 @@ Utilizando técnicas de geometria computacional e visualização científica, o 
 
 ### Principais tópicos
 Extração de Isosuperfícies
-
 Processamento de Dados Volumétricos
-
 Reconstrução 3D
-
 Imagens Médicas (Ressonância Magnética e Angiografia)
-
 Visualização Científica
-
 Geração de Dados Sintéticos
-
 Geometria Computacional
 
 ### Objetivos
 Reconstruir superfícies tridimensionais a partir de conjuntos de dados volumétricos.
-
 Avaliar o comportamento dos métodos de extração sob diferentes condições dos dados.
-
 Gerar modelos 3D precisos e visualmente interpretáveis.
-
-Explorar aplicações da visualização volumétrica em contextos médicos e científicos.
+Explorar aplicações da visualização volumétrica em contextos médicos e científicos
