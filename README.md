@@ -1,24 +1,23 @@
-# 3D Model Synthesis and Isosurface Extraction
+# Síntese de Modelos 3D por Extração de Isosuperfícies
 
-This repository contains the codes developed during my undergraduate research project on **3D Model Synthesis**, with a specific focus on **Isosurface Extraction from Volumetric Data**.
+Este repositório contém os códigos desenvolvidos durante meu projeto de iniciação científica em Síntese de Modelos 3D, com foco específico na extração de isosuperfícies a partir de dados volumétricos.
 
-The project investigates techniques for reconstructing and visualizing three-dimensional structures from scalar volumetric datasets. The developed methods were applied to both **synthetic datasets**, generated for controlled experiments and validation, and **medical imaging data**, including magnetic resonance imaging (MRI) and angiographic examinations.
+O projeto investiga técnicas para reconstrução e visualização de estruturas tridimensionais a partir de conjuntos de dados volumétricos escalares. Os métodos desenvolvidos foram aplicados tanto a dados sintéticos, gerados para experimentos controlados e validação, quanto a imagens médicas, incluindo exames de ressonância magnética (RM) e angiografia.
 
-Using computational geometry and scientific visualization techniques, the workflow enables the extraction of isosurfaces that represent relevant structures within volumetric data, resulting in the generation of interactive and analyzable 3D models. These models contribute to the interpretation of complex datasets and have applications in areas such as medical image analysis, computer graphics, and scientific visualization.
+Utilizando técnicas de geometria computacional e visualização científica, o fluxo de trabalho permite a extração de isosuperfícies que representam estruturas relevantes presentes nos dados volumétricos, resultando na geração de modelos 3D interativos e passíveis de análise. Esses modelos contribuem para a interpretação de conjuntos de dados complexos e possuem aplicações em áreas como análise de imagens médicas, computação gráfica e visualização científica.
 
-### Main Topics
+### Principais tópicos
+Extração de Isosuperfícies
+Processamento de Dados Volumétricos
+Reconstrução 3D
+Imagens Médicas (Ressonância Magnética e Angiografia)
+Visualização Científica
+Geração de Dados Sintéticos
+Geometria Computacional
 
-* Isosurface Extraction
-* Volumetric Data Processing
-* 3D Reconstruction
-* Medical Imaging (MRI and Angiography)
-* Scientific Visualization
-* Synthetic Data Generation
-* Computational Geometry
-
-### Objectives
-
-* Reconstruct three-dimensional surfaces from volumetric datasets.
-* Evaluate the behavior of extraction methods under different data conditions.
-* Generate accurate and visually interpretable 3D models.
+### Objetivos
+Reconstruir superfícies tridimensionais a partir de conjuntos de dados volumétricos.
+Avaliar o comportamento dos métodos de extração sob diferentes condições dos dados.
+Gerar modelos 3D precisos e visualmente interpretáveis.
+Explorar aplicações da visualização volumétrica em contextos médicos e científicos.
 * Explore applications of volumetric visualization in medical and scientific contexts.
