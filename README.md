@@ -7,16 +7,16 @@ O projeto investiga técnicas para reconstrução e visualização de estruturas
 Utilizando técnicas de geometria computacional e visualização científica, o fluxo de trabalho permite a extração de isosuperfícies que representam estruturas relevantes presentes nos dados volumétricos, resultando na geração de modelos 3D interativos e passíveis de análise. Esses modelos contribuem para a interpretação de conjuntos de dados complexos e possuem aplicações em áreas como análise de imagens médicas, computação gráfica e visualização científica.
 
 ### Principais tópicos
-Extração de Isosuperfícies <br>
-Processamento de Dados Volumétricos <br>
-Reconstrução 3D<br>
-Imagens Médicas (Ressonância Magnética e Angiografia)<br>
-Visualização Científica<br>
-Geração de Dados Sintéticos<br>
-Geometria Computacional<br>
+Extração de Isosuperfícies  
+Processamento de Dados Volumétricos  
+Reconstrução 3D  
+Imagens Médicas (Ressonância Magnética e Angiografia)  
+Visualização Científica  
+Geração de Dados Sintéticos  
+Geometria Computacional  
 
 ### Objetivos
-Reconstruir superfícies tridimensionais a partir de conjuntos de dados volumétricos.<br>
-Avaliar o comportamento dos métodos de extração sob diferentes condições dos dados.<br>
-Gerar modelos 3D precisos e visualmente interpretáveis.<br>
-Explorar aplicações da visualização volumétrica em contextos médicos e científicos.<br>
+Reconstruir superfícies tridimensionais a partir de conjuntos de dados volumétricos.  
+Avaliar o comportamento dos métodos de extração sob diferentes condições dos dados.  
+Gerar modelos 3D precisos e visualmente interpretáveis.  
+Explorar aplicações da visualização volumétrica em contextos médicos e científicos.  
