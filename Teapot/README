@@ -1,8 +1,8 @@
 # Boston Teapot — Conversão de Dados e Marching Cubes
 
-Esta pasta contém os arquivos utilizados no processamento do dataset **Boston Teapot**.
+Esta pasta contém os arquivos utilizados no processamento do dataset **Boston Teapot**, disponibilizado pela coleção **Open SciVis Datasets**, no contexto do projeto de Iniciação Científica em **Síntese de Modelos 3D e Extração de Isosuperfícies**.
 
-## Fluxo de processamento
+## Fluxo do processamento
 
 ```text
 boston_teapot_256x256x178_uint8.raw
@@ -33,11 +33,19 @@ Arquivo binário contendo os dados volumétricos do dataset Boston Teapot.
 
 Programa desenvolvido em C para realizar a leitura do arquivo binário e converter seus dados para uma representação em arquivo de texto.
 
+O programa percorre o volume tridimensional e gera o arquivo `coordenadas.txt`, que será utilizado como entrada pelo algoritmo Marching Cubes.
+
+### `coordenadas.txt`
+
+Arquivo intermediário contendo a representação textual dos voxels do volume.
+
 ### `MarchingCubesTXT2PLYs.pde`
 
-Implementação do algoritmo **Marching Cubes** em Processing para geração de malhas tridimensionais no formato `.PLY`.
+Implementação do algoritmo **Marching Cubes** em Processing.
 
-## Execução
+O programa lê `coordenadas.txt`, reconstrói o volume e gera malhas tridimensionais no formato `.PLY` para os isovalores definidos no código.
+
+## Como executar
 
 ### 1. Converter o arquivo binário
 
@@ -46,10 +54,26 @@ gcc leituraBinary.c -o leituraBinary
 ./leituraBinary
 ```
 
-### 2. Executar o Marching Cubes
+**Entrada:** `boston_teapot_256x256x178_uint8.raw`
+
+**Saída:** `coordenadas.txt`
+
+### 2. Gerar a malha 3D
 
 Abra `MarchingCubesTXT2PLYs.pde` no Processing e execute o programa.
 
+Os arquivos `.PLY` serão gerados automaticamente para os isovalores configurados.
+
+## Adaptação para outros datasets
+
+Os códigos desta pasta foram utilizados com o **Boston Teapot**, porém são genéricos.
+
+Para utilizar outro volume, basta modificar:
+
+- dimensões do volume (`W`, `H` e `D`);
+- nome do arquivo de entrada;
+- parâmetros de isovalor no `MarchingCubesTXT2PLYs.pde`.
+
 ## Resultado
 
-O resultado final é uma malha tridimensional no formato **PLY**, que pode ser visualizada em softwares como o **MeshLab**.
+O processamento produz uma ou mais **malhas tridimensionais no formato PLY**, permitindo a visualização e análise do modelo em softwares como **MeshLab**.
