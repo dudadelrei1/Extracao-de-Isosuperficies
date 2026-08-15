@@ -1,8 +1,8 @@
 # Boston Teapot — Conversão de Dados e Marching Cubes
 
-Esta pasta contém os arquivos utilizados no processamento do dataset **Boston Teapot**, disponibilizado pela coleção **Open SciVis Datasets**. 
+Esta pasta contém os arquivos utilizados no processamento do dataset **Boston Teapot**.
 
-O processamento é realizado em duas etapas principais:
+## Fluxo de processamento
 
 ```text
 boston_teapot_256x256x178_uint8.raw
@@ -26,83 +26,30 @@ boston_teapot_256x256x178_uint8.raw
 
 Arquivo binário contendo os dados volumétricos do dataset Boston Teapot.
 
-* **Dimensões:** 256 × 256 × 178
-* **Tipo de dado:** `uint8`
-
-As dimensões do volume devem ser informadas no código `leituraBinary.c` para que os dados binários sejam interpretados corretamente.
+- **Dimensões:** 256 × 256 × 178
+- **Tipo de dado:** `uint8`
 
 ### `leituraBinary.c`
 
 Programa desenvolvido em C para realizar a leitura do arquivo binário e converter seus dados para uma representação em arquivo de texto.
 
-O programa armazena o volume em uma estrutura tridimensional e percorre suas coordenadas `(x, y, z)`, registrando os voxels que atendem à condição definida no código.
-
-A saída dessa etapa é o arquivo:
-
-```text
-coordenadas.txt
-```
-
-### `coordenadas.txt`
-
-Arquivo de texto intermediário utilizado como entrada para o código de Marching Cubes.
-
-Ele representa os dados do volume em uma estrutura que pode ser carregada pelo Processing.
-
 ### `MarchingCubesTXT2PLYs.pde`
 
-Código desenvolvido em **Processing** para realizar a extração de isosuperfícies utilizando o algoritmo **Marching Cubes**.
-
-O programa recebe o arquivo `coordenadas.txt`, reconstrói o volume e executa o algoritmo para diferentes valores de isovalor. Como resultado, são geradas malhas tridimensionais no formato `.PLY`.
-
-Para o Boston Teapot, os parâmetros referentes às dimensões do volume devem ser configurados como:
-
-```text
-256 × 256 × 178
-```
-
-Os valores de isovalor utilizados podem ser ajustados de acordo com os dados presentes no volume.
+Implementação do algoritmo **Marching Cubes** em Processing para geração de malhas tridimensionais no formato `.PLY`.
 
 ## Execução
 
-### 1. Conversão do arquivo binário
-
-Compile e execute o programa:
+### 1. Converter o arquivo binário
 
 ```bash
 gcc leituraBinary.c -o leituraBinary
 ./leituraBinary
 ```
 
-O programa deve utilizar como entrada:
+### 2. Executar o Marching Cubes
 
-```text
-boston_teapot_256x256x178_uint8.raw
-```
-
-e gerar:
-
-```text
-coordenadas.txt
-```
-
-### 2. Extração da isosuperfície
-
-Abra `MarchingCubesTXT2PLYs.pde` no **Processing** e execute o programa.
-
-O arquivo `coordenadas.txt` será utilizado como entrada e o algoritmo Marching Cubes produzirá os arquivos `.PLY` correspondentes aos isovalores definidos no código.
-
-## Generalização dos códigos
-
-Embora os códigos desta pasta tenham sido utilizados com o dataset **Boston Teapot**, eles não são exclusivos desse dataset.
-
-O `leituraBinary.c` pode ser utilizado para outros arquivos binários, desde que sejam ajustados os parâmetros relacionados às dimensões do volume, ao tipo dos dados e ao formato do arquivo.
-
-Da mesma forma, o `MarchingCubesTXT2PLYs.pde` pode ser utilizado com outros arquivos de texto que estejam no formato esperado pelo programa. Nesse caso, devem ser modificados os parâmetros referentes às dimensões do volume, arquivo de entrada e valores de isovalor.
-
-Assim, os arquivos desta pasta representam uma aplicação dos códigos ao dataset **Boston Teapot**, enquanto os códigos podem ser adaptados para outros volumes e conjuntos de dados.
+Abra `MarchingCubesTXT2PLYs.pde` no Processing e execute o programa.
 
 ## Resultado
 
-O resultado final do processamento é uma ou mais **malhas tridimensionais no formato PLY**, obtidas a partir da extração de isosuperfícies do volume do Boston Teapot utilizando o algoritmo Marching Cubes.
-
+O resultado final é uma malha tridimensional no formato **PLY**, que pode ser visualizada em softwares como o **MeshLab**.
