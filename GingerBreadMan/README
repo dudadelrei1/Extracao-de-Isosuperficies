@@ -1,1 +1,129 @@
+# Geração de Imagens — Gingerbread Man
+
+Este código gera um conjunto de imagens em escala de cinza que representam as diferentes fatias de um modelo tridimensional do Gingerbread Man. As imagens são geradas a partir de funções matemáticas que definem as diferentes partes do modelo.
+
+## Funcionamento
+
+O programa trabalha com um volume de dimensões **512 × 512 × 512**. O centro do volume é definido no ponto:
+
+```text
+(cx, cy, cz) = (256, 256, 256)
+```
+
+As coordenadas de cada ponto são deslocadas em relação a esse centro, permitindo que as funções matemáticas sejam definidas considerando o centro do modelo como a origem `(0, 0, 0)`.
+
+O Gingerbread Man é construído a partir de seis partes:
+
+* Cabeça
+* Tronco
+* Braço direito
+* Braço esquerdo
+* Perna direita
+* Perna esquerda
+
+Cada parte é representada por uma **função implícita**, que recebe as coordenadas `(x, y, z)` e retorna um valor escalar.
+
+As funções utilizam potências de quarta ordem para definir o formato das partes do modelo. Por exemplo, a cabeça é definida por:
+
+```text
+x⁴ + (y - 8.5)⁴ + z⁴
+```
+
+enquanto o tronco utiliza diferentes fatores de escala nos três eixos:
+
+```text
+x⁴ / 2 + y⁴ / 11 + z⁴ / 3
+```
+
+Os termos `x - a`, `x + a`, `y - a` e `y + a` são utilizados para posicionar cada parte em diferentes regiões do espaço.
+
+### União das partes
+
+Depois de calcular o valor de cada função, o código combina as seis partes utilizando a função `max()`:
+
+```text
+campo = max(fCabeca, fTronco, fBracoD,
+            fBracoE, fPernaD, fPernaE)
+```
+
+Assim, cada ponto do volume recebe um único valor correspondente ao campo escalar do modelo.
+
+### Conversão para escala de cinza
+
+O valor obtido pelo campo é posteriormente normalizado para o intervalo `[0, 1]` e convertido para o intervalo de intensidade `[0, 255]`.
+
+O parâmetro:
+
+```text
+K = 50.0
+```
+
+é utilizado nessa normalização.
+
+A transformação é realizada de acordo com:
+
+```text
+valNorm = constrain((campo + K) / (2 * K), 0, 1)
+
+valByte = round(valNorm * 255)
+```
+
+Dessa forma, o valor `0` do campo corresponde aproximadamente à intensidade **128** na imagem.
+
+Portanto:
+
+```text
+campo < 0  → tons abaixo de 128
+campo = 0  → intensidade 128
+campo > 0  → tons acima de 128
+```
+
+### Geração das imagens
+
+O código percorre as 512 posições do eixo Z. Para cada posição, é criada uma imagem de tamanho **512 × 512 pixels**.
+
+Cada pixel `(i, j)` da imagem corresponde a um ponto `(x, y, z)` do volume:
+
+```text
+x = i - 256
+y = j - 256
+z = k - 256
+```
+
+O valor calculado para esse ponto é convertido em uma intensidade de cinza e armazenado no pixel correspondente.
+
+Ao final de cada iteração, a imagem é salva utilizando o formato:
+
+```text
+gingerBreadMan000.png
+gingerBreadMan001.png
+gingerBreadMan002.png
+...
+gingerBreadMan511.png
+```
+
+Assim, as 512 imagens representam as 512 fatias do modelo ao longo do eixo Z.
+
+## Verificação dos dados
+
+Durante a execução, o programa também verifica os valores produzidos, armazenando:
+
+* menor intensidade de cinza encontrada;
+* maior intensidade de cinza encontrada;
+* quantidade de níveis de cinza diferentes utilizados.
+
+Essa verificação permite acompanhar a distribuição dos valores gerados no volume.
+
+## Resultado
+
+Ao final da execução, o programa gera:
+
+```text
+512 imagens PNG
+512 × 512 pixels por imagem
+```
+
+As imagens representam, em conjunto, um **volume tridimensional do Gingerbread Man**.
+
+Esse volume será posteriormente utilizado como dado sintético para testes e validação da implementação do **Marching Cubes**, que deverá utilizar as imagens para reconstruir a isosuperfície e gerar o modelo 3D correspondente.
 
