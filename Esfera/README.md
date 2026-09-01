@@ -104,7 +104,8 @@ o ponto de interseção é calculado por:
 
 onde
 
-[t=\frac{\tau-s_1}{s_2-s_1}]
+<img width="126" height="65" alt="image" src="https://github.com/user-attachments/assets/3ebcd46f-4c11-4190-a623-794c14003605" />
+
 
 Essa etapa produz uma aproximação muito mais suave da superfície.
 
