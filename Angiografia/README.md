@@ -111,7 +111,7 @@ Essa estrutura é necessária para trabalhar posteriormente com algoritmos de vi
 
 ## Dados de angiografia
 
-Diferentemente do dataset sintético do Gingerbread Man, os dados de angiografia representam uma estrutura obtida a partir de um exame médico. O conjunto de dados foi retirado da plataforma Open Scivis.
+Diferentemente do dataset sintético do Gingerbread Man, os dados de angiografia representam uma estrutura obtida a partir de um exame médico. O conjunto de dados foi retirado da plataforma PhysioNet (https://www.physionet.org/content/images/1.0.0/).
 
 Nesse caso, a geometria não é definida diretamente por equações matemáticas. Ela está contida nos valores de intensidade das imagens.
 
