@@ -1,4 +1,4 @@
-# Leitura de Imagens de Angiografia
+# Angiografia
 
 Este diretório contém o código desenvolvido para a leitura e organização de um conjunto de imagens de angiografia utilizado como dado volumétrico.
 O código realiza a leitura sequencial das imagens que compõem o exame de angiografia e organiza as diferentes fatias para formar a representação de um volume tridimensional. Cada imagem corresponde a uma seção do volume em uma determinada posição no eixo Z.
