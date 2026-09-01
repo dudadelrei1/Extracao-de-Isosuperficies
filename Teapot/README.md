@@ -24,7 +24,7 @@ boston_teapot_256x256x178_uint8.raw
 
 ### `boston_teapot_256x256x178_uint8.raw`
 
-Arquivo binário contendo os dados volumétricos do dataset Boston Teapot.
+Arquivo binário contendo os dados volumétricos do dataset Boston Teapot da Open Scivis (http://klacansky.com/open-scivis-datasets/).
 
 - **Dimensões:** 256 × 256 × 178
 - **Tipo de dado:** `uint8`
